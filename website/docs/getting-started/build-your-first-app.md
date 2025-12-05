@@ -283,8 +283,9 @@ public class GreetingAppRunner {
     public static void main(String[] args) {
         JMiniAppRunner
             .forApp(GreetingApp.class)
+            .named("Greeting")
             .withState(Greeting.class)
-            .withAdapters(new GreetingJSONAdapter())  // ← Register adapter
+            .withAdapters(new GreetingJSONAdapter())
             .run(args);
     }
 }
@@ -302,8 +303,8 @@ protected void shutdown() {
 
     // Export to JSON file
     try {
-        context.exportData("greeting.json", "json");
-        System.out.println("Greeting exported to greeting.json");
+        context.exportData("json");
+        System.out.println("Greeting exported to Greeting.json");
     } catch (Exception e) {
         System.err.println("Failed to export: " + e.getMessage());
     }
