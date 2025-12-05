@@ -24,6 +24,10 @@ mvn -version
 
 ### Building from Source
 
+:::note
+JMiniApp is not yet published to Maven Central. You must build from source first to use it in your projects.
+:::
+
 Clone the repository and build the framework locally:
 
 ```bash
@@ -45,7 +49,3 @@ After building from source, add JMiniApp as a dependency in your project's `pom.
     <version>1.0.0-SNAPSHOT</version>
 </dependency>
 ```
-
-:::note
-JMiniApp is not yet published to Maven Central. You must build from source first to use it in your projects.
-:::
