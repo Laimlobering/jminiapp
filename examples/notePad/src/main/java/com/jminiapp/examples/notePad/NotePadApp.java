@@ -59,12 +59,12 @@ public class NotePadApp extends JMiniApp {
     @Override
     protected void shutdown() {
         // Save the note state to context
-        List<NotePadStates> data = new ArrayList<>();
-        data.add(notePad);
-        context.setData(data);
-
-        //List<NotePadStates> data = List.of(notePad);
+        //List<NotePadStates> data = new ArrayList<>();
+        //data.add(notePad);
         //context.setData(data);
+
+        List<NotePadStates> data = List.of(notePad);
+        context.setData(data);
 
         scanner.close();
         System.out.println("\nFinal note text: " + notePad.getNote());
@@ -128,7 +128,6 @@ public class NotePadApp extends JMiniApp {
         }
     }
 
-    //REVISAR
     private void exportToFile() {
         try {
             // Save current notePad to context before exporting
@@ -142,7 +141,6 @@ public class NotePadApp extends JMiniApp {
         }
     }
 
-    //REVISAR
     private void importFromFile() {
         try {
 
