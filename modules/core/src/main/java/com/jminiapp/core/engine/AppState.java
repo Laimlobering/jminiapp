@@ -68,11 +68,17 @@ public class AppState {
     /**
      * Set the data for this state.
      *
+     * <p>Creates a defensive mutable copy of the provided list to ensure
+     * the internal data can be safely modified by import strategies and
+     * other operations.</p>
+     *
      * @param data the new data
      * @param <T> the type of objects in the list
      */
     public <T> void setData(List<T> data) {
-        this.data = data;
+        // Create a defensive mutable copy to avoid UnsupportedOperationException
+        // when using immutable lists like List.of()
+        this.data = data != null ? new ArrayList<>(data) : new ArrayList<T>();
         this.modified = true;
     }
 
