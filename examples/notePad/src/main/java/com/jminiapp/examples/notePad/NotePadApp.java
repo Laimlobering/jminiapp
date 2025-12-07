@@ -39,8 +39,7 @@ public class NotePadApp extends JMiniApp {
         // Try to load existing note state from context
         List<NotePadStates> data = context.getData();
         if (data != null && !data.isEmpty()) {
-            String existingNote = data.get(0).getNote();
-            notePad = new NotePadStates(existingNote);
+            notePad = data.get(0);
             System.out.println("Loaded existing note: " + notePad.getNote());
         } else {
             notePad = new NotePadStates();
@@ -145,12 +144,12 @@ public class NotePadApp extends JMiniApp {
         try {
 
             // Use default filename convention: {appName}.{format}
-            context.importData("NotePad.json", "json");
+            context.importData("json");
 
             // Update local note from context after import
             List<NotePadStates> data = context.getData();
             if (data != null && !data.isEmpty()) {
-                notePad = data.get(0); // ← ESTA ES LA CLAVE
+                notePad = data.get(0);
                 System.out.println("NotePad state imported successfully!");
                 System.out.println("New text: " + notePad.getNote());
             } else {

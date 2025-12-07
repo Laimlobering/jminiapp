@@ -126,11 +126,9 @@ public class NotePadApp extends JMiniApp {
     protected void initialize() {
         System.out.println("\n=== NotePad App ===");
         System.out.println("Welcome to the NotePad App");
-
         scanner = new Scanner(System.in);
         running = true;
 
-        // Try to load existing note state from context
         List<NotePadStates> data = context.getData();
         if (data != null && !data.isEmpty()) {
             notePad = data.get(0);
@@ -151,7 +149,6 @@ public class NotePadApp extends JMiniApp {
 
     @Override
     protected void shutdown() {
-        // Save the note state to context
         List<NotePadStates> data = List.of(notePad);
         context.setData(data);
 
@@ -218,10 +215,8 @@ public class NotePadApp extends JMiniApp {
 
     private void exportToFile() {
         try {
-            // Save current notePad to context before exporting
             context.setData(List.of(notePad));
 
-            // Use default filename convention: {appName}.{format}
             context.exportData("json");
             System.out.println("NotePad state exported successfully to: NotePad.json");
         } catch (IOException e) {
@@ -237,7 +232,7 @@ public class NotePadApp extends JMiniApp {
             List<NotePadStates> data = context.getData();
             if (data != null && !data.isEmpty()) {
                 notePad = data.get(0);
-                System.out.println("NotePad state imported successfully from NotePad.json!");
+                System.out.println("NotePad state imported successfully!");
                 System.out.println("New text: " + notePad.getNote());
             } else {
                 System.out.println("Error: No data found in file.");
