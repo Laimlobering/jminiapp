@@ -71,6 +71,7 @@ public class NotePadStates {
     }
 
 }
+```
 
 ### Adapter
 We use the JSONAdapter pattern. JMiniApp handles the serialization of the note field automatically.
