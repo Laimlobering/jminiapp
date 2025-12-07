@@ -1,7 +1,11 @@
-##  (2025-12-05)
+## 0.2.1 (2025-12-07)
+
+* fix: add defensive mutable copy to set data (#16) ([f32d7c7](https://github.com/luisburgos/jminiapp/commit/f32d7c7)), closes [#16](https://github.com/luisburgos/jminiapp/issues/16)
+
 
 ## 0.2.0 (2025-12-05)
 
+* chore: add changelog ([2b90073](https://github.com/luisburgos/jminiapp/commit/2b90073))
 * chore: add conventional changelog dependency ([01376dd](https://github.com/luisburgos/jminiapp/commit/01376dd))
 * fix: first app dependency version ([c3cdd23](https://github.com/luisburgos/jminiapp/commit/c3cdd23))
 * fix: greeting tutorial export file name ([8401ac0](https://github.com/luisburgos/jminiapp/commit/8401ac0))
@@ -11,6 +15,8 @@
 * docs: update installation guide ([78f51e9](https://github.com/luisburgos/jminiapp/commit/78f51e9))
 * docs: update readme files ([185f6d5](https://github.com/luisburgos/jminiapp/commit/185f6d5))
 * docs(website): add prerequisites to readme ([8a15853](https://github.com/luisburgos/jminiapp/commit/8a15853))
+
+
 
 ## 0.1.0 (2025-12-02)
 
