@@ -122,7 +122,7 @@ public class CounterApp extends JMiniApp {
 
             // Use default filename convention: {appName}.{format}
             context.exportData("json");
-            System.out.println("Counter state exported successfully to: Counter.json");
+            System.out.println("Counter state exported successfully to: .json");
         } catch (IOException e) {
             System.out.println("Error exporting file: " + e.getMessage());
         }
